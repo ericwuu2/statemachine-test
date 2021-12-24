@@ -8,6 +8,8 @@ import (
 )
 
 func NewGameProcessWithStruct() *statemachine_common.GameProcess {
+	gameProcess := &statemachine_common.GameProcess{}
+	gameProcess.Machine = statemachine.NewMachine()
 	gameProcessMachineDef := &statemachine.MachineDef{
 		States:       []string{"loading", "ready", "starting", "spinning", "finished"},
 		InitialState: "loading",
@@ -25,10 +27,34 @@ func NewGameProcessWithStruct() *statemachine_common.GameProcess {
 				}},
 			},
 			"start": {
+
 				Transitions: []*statemachine.TransitionDef{{
 					From: []string{"ready"},
 					To:   "starting",
 				}},
+
+				Choice: &statemachine.ChoiceDef{
+					Condition: &statemachine.ChoiceConditionDef{
+						Label:          "",
+						RegisteredFunc: "",
+						Condition:      nil,
+					},
+					UnlessGuard: &statemachine.TransitionGuardDef{
+						Label:          "",
+						RegisteredFunc: "",
+						Guard:          nil,
+					},
+					OnTrue: &statemachine.EventDef{
+						//TimedEvery:  0,
+						//Choice:      nil,
+						Transitions: nil,
+					},
+					OnFalse: &statemachine.EventDef{
+						//TimedEvery:  0,
+						//Choice:      nil,
+						Transitions: nil,
+					},
+				},
 			},
 			"play": {
 				Transitions: []*statemachine.TransitionDef{{
@@ -89,8 +115,7 @@ func NewGameProcessWithStruct() *statemachine_common.GameProcess {
 			},
 		},
 	}
-	gameProcess := &statemachine_common.GameProcess{}
-	gameProcess.Machine = statemachine.NewMachine()
+
 	gameProcess.SetMachineDef(gameProcessMachineDef)
 
 	return gameProcess

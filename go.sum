@@ -2,3 +2,5 @@ github.com/Gurpartap/statemachine-go v0.0.0-20190708030151-b27cddb816c4 h1:vXHfH
 github.com/Gurpartap/statemachine-go v0.0.0-20190708030151-b27cddb816c4/go.mod h1:EoZCl/DeoRmBl0pH6YGBXefkF71UX2jjdvFFnZvLgD4=
 github.com/ericwuu2/statemachine-common v0.0.0-20211210081321-03893703adfc h1:dMc1zgrvdGjtx3YmVMJEz/x/7ayGys4H1/7JiKv3OdY=
 github.com/ericwuu2/statemachine-common v0.0.0-20211210081321-03893703adfc/go.mod h1:B8Kf+iOYXsuxha6b5A27QbmbBWPbaL21yPs4xX1DsvE=
+github.com/ericwuu2/statemachine-common v0.0.0-20211210132200-87245cdf042e h1:uI3v9zo0tnpdr9uQGqd4PgGC123FQ3MrnSwxBxg5n/U=
+github.com/ericwuu2/statemachine-common v0.0.0-20211210132200-87245cdf042e/go.mod h1:B8Kf+iOYXsuxha6b5A27QbmbBWPbaL21yPs4xX1DsvE=

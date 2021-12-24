@@ -19,7 +19,7 @@ func NewGameProcess() *statemachine_common.GameProcess {
 			Choice(&gameProcess.IsLogin).
 			Label("READY").
 			Label("LoadingToReady").
-			Unless(&gameProcess.IsDisconnect).
+			Unless(&gameProcess.IsConnect).
 			OnTrue(func(eventBuilder statemachine.EventBuilder) {
 				eventBuilder.Transition().From("loading").To("ready")
 			}).
