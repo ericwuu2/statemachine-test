@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 	"github.com/Gurpartap/statemachine-go"
-	statemachine_common "github.com/ericwuu2/statemachine-common"
+	statemachineCommon "statemachine-test/common"
 	"time"
 )
 
 // NewStructureClientGameProcess Structure
-func NewStructureClientGameProcess() *statemachine_common.GameProcess {
-	clientGameProcess := &statemachine_common.GameProcess{}
+func NewStructureClientGameProcess() *statemachineCommon.GameProcess {
+	clientGameProcess := &statemachineCommon.GameProcess{}
 	clientGameProcess.Machine = statemachine.NewMachine()
 	clientGameProcessMachineDef := &statemachine.MachineDef{
 		States:       []string{"Launch", "MainMenu", "ChooseGame", "PlayGame"},

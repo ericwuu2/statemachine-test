@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 	"github.com/Gurpartap/statemachine-go"
-	statemachine_common "github.com/ericwuu2/statemachine-common"
+	statemachineCommon "statemachine-test/common"
 )
 
 // NewClientGameProcess ImperativeParadigm
-func NewClientGameProcess() *statemachine_common.GameProcess {
-	clientGameProcess := &statemachine_common.GameProcess{}
+func NewClientGameProcess() *statemachineCommon.GameProcess {
+	clientGameProcess := &statemachineCommon.GameProcess{}
 
 	clientGameProcess.Machine = statemachine.BuildNewMachine(func(machineBuilder statemachine.MachineBuilder) {
 		machineBuilder.States("Launch", "MainMenu", "ChooseGame", "PlayGame")
